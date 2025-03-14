@@ -109,7 +109,20 @@ export function countShortWords(words: string[]): number {
  * then return true.
  */
 export function allRGB(colors: string[]): boolean {
-    return false;
+    if (colors.length === 0) {
+        return true;
+    }
+    for (let i = 0; i < colors.length; i++) {
+        if (
+            // i really hate how prettier does this \/, this really does not look good to me personally
+            colors[i] !== "red" &&
+            colors[i] !== "blue" &&
+            colors[i] !== "green"
+        ) {
+            return false;
+        }
+    }
+    return true;
 }
 
 /**
