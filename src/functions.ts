@@ -3,7 +3,7 @@
  * using this formula:
  *      C = (F - 32) * 5/9
  */
-export function fahrenheitToCelcius(temperature: number): number {
+export function fahrenheitToCelius(temperature: number): number {
     return (temperature - 32) * (5 / 9);
 }
 
@@ -47,5 +47,11 @@ export function isQuestion(message: string): boolean {
  * upper or lower case), then return `false`. Otherwise, return `null`.
  */
 export function convertYesNo(word: string): boolean | null {
-    return true;
+    if (word.toLowerCase() === "yes") {
+        return true;
+    }
+    if (word.toLowerCase() === "no") {
+        return false;
+    }
+    return null;
 }
