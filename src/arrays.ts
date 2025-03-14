@@ -133,7 +133,22 @@ export function allRGB(colors: string[]): boolean {
  * And the array [] would become "0=0".
  */
 export function makeMath(addends: number[]): string {
-    return "";
+    let sum = 0;
+    let equation = "";
+    if (addends.length == 0) {
+        return "0=0";
+    }
+    for (let i = 0; i < addends.length; i++) {
+        sum += addends[i];
+        if (i == 0) {
+            equation += addends[i];
+        } else {
+            equation += "+" + addends[i];
+        }
+    }
+    return sum + "=" + equation;
+    // i really don't like how this looks but it works so whatever
+    // also i had no clue you could do === instead of ==
 }
 
 /**
