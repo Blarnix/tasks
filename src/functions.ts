@@ -3,8 +3,8 @@
  * using this formula:
  *      C = (F - 32) * 5/9
  */
-export function fahrenheitToCelius(temperature: number): number {
-    return 0;
+export function fahrenheitToCelcius(temperature: number): number {
+    return (temperature - 32) * (5 / 9);
 }
 
 /**
