@@ -33,6 +33,16 @@ export function tripleNumbers(numbers: number[]): number[] {
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
+    for (let i = 0; i < numbers.length; i++) {
+        const parsed = parseInt(numbers[i]);
+        // isNan checks if the value is not a number
+        if (isNaN(parsed)) {
+            numbers[i] = "0";
+        } else {
+            // i kinda hate how prettier does this but whatever. it also moved my comment here which i was slightly annoyed by
+            numbers[i] = parsed.toString();
+        }
+    }
     return [];
 }
 
