@@ -76,6 +76,16 @@ export const removeDollars = (amounts: string[]): number[] => {
  * in question marks ("?").
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
+    for (let i = 0; i < messages.length; i++) {
+        // i could get used to all of these string methods
+        if (messages[i].endsWith("!")) {
+            messages[i] = messages[i].toUpperCase();
+        }
+        if (messages[i].endsWith("?")) {
+            messages.splice(i, 1);
+            i--; // decrement index after removal, almost forgot that
+        }
+    }
     return [];
 };
 
